@@ -7,12 +7,12 @@ services:
         volumes:
             - readthedocs:/var/readthedocs
         environment:
-            DEBUG: 'True'
-            EMAIL_HOST: 'docs.example.com'
-            EMAIL_PORT: 25
-            EMAIL_HOST_USER: 'no-reply@example.com'
-            EMAIL_HOST_PASSWORD: '123456'
-            DEFAULT_FROM_EMAIL: 'no-reply@example.com'
+            DEBUG: ${RTD_DEBUG}
+            EMAIL_HOST: ${RTD_EMAIL_HOST}
+            EMAIL_PORT: ${RTD_EMAIL_PORT}
+            EMAIL_HOST_USER: ${RTD_EMAIL_HOST_USER}
+            EMAIL_HOST_PASSWORD: ${RTD_EMAIL_HOST_PASSWORD}
+            DEFAULT_FROM_EMAIL: ${RTD_DEFAULT_FROM_EMAIL}
 
     nginx:
         image: nginx
